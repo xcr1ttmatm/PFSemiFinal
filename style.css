@@ -1,0 +1,196 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c2c2c, #3e3e3e, #f2f2f2);
+    background-size: 200% 200%;
+    animation: gradientFlow 15s ease infinite;
+    color: #f8f8f8;
+    overflow-x: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .ambient-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(255, 215, 0, 0.08), transparent 60%),
+                radial-gradient(circle at bottom left, rgba(255, 105, 180, 0.08), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  h1, h2 {
+    color: #ffd700;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #000;
+  }
+  
+  .section {
+    max-width: 720px;
+    margin: 20px auto;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    color: #333;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  button {
+    padding: 12px 24px;
+    margin: 6px;
+    background: linear-gradient(to right, #a52a2a, #8b0000);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #8b0000, #a52a2a);
+    transform: scale(1.05);
+  }
+  
+  .back-button {
+    background: linear-gradient(to right, #555, #333);
+  }
+  
+  .back-button:hover {
+    background: linear-gradient(to right, #333, #111);
+  }
+  
+  input[type="text"] {
+    padding: 12px;
+    width: 85%;
+    margin-top: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .item-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .item-card {
+    width: 200px;
+    padding: 12px;
+    background-color: #fff8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .item-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .item-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .item-button {
+    background: linear-gradient(to right, #d2691e, #8b4513);
+    margin-top: 8px;
+  }
+  
+  .item-button:hover {
+    background: linear-gradient(to right, #8b4513, #d2691e);
+  }
+  
+  div#home {
+    margin: 5% auto;
+    text-align: center;
+  }
+  
+  .quantity-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+  }
+  
+  .quantity-controls button {
+    font-size: 18px;
+    padding: 6px 12px;
+    background-color: #a52a2a;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .quantity-controls button:hover {
+    background-color: #8b0000;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      margin: 10px;
+      padding: 16px;
+    }
+  
+    .item-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .item-card {
+      width: 90%;
+    }
+  
+    button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  .center-button {
+    text-align: center;
+    margin-top: 20px;
+  }
